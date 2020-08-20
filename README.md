@@ -9,7 +9,7 @@ Kick off your prototype with this G2 starter. This starter ships with the main G
     Use the Gatsby CLI to create a new site, specifying the default starter.
 
     ```shell
-    # create a new Gatsby site using the default starter
+    # create a new Gatsby site with G2
     npx gatsby new my-site https://github.com/itsjonq/gatsby-starter-g2
     ```
 
