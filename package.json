@@ -4,6 +4,15 @@
   "description": "A simple starter to get up and developing quickly with G2",
   "version": "0.0.1",
   "author": "Jon Quach <hello@jonquach.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo"
+  },
   "dependencies": {
     "gatsby": "^2.24.47",
     "gatsby-image": "^2.4.16",
@@ -32,15 +41,6 @@
     "prototype"
   ],
   "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/itsjonq/gatsby-starter-g2"
