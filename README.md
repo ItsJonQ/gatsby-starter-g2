@@ -10,7 +10,7 @@ Kick off your prototype with this G2 starter. This starter ships with the main G
 
     ```shell
     # create a new Gatsby site using the default starter
-    gatsby new my-site https://github.com/itsjonq/gatsby-starter-g2
+    npx gatsby new my-site https://github.com/itsjonq/gatsby-starter-g2
     ```
 
 1.  **Start developing.**
