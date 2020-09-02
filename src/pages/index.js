@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, HStack, Elevation, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
+import { Heading, Text, HStack, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
+import { PluginCard } from '../components'
 
 function FeaturedPluginCard() {
 	return (
@@ -23,25 +24,6 @@ function FeaturedPluginCard() {
 			</CardBody>
 		</Card>
 	)
-}
-
-function PluginCard( { title } ) {
-	return (
-		<Card p={ 3 } m={ 3 }>
-			<CardBody>
-				<Link to="/plugin">
-					<Grid columns={ 2 } templateColumns={ "50px auto" } align={ "start" } gap={ "16px" }>
-						<Placeholder width={ 50 } height={ 50 } css={ "border-radius: 50%" } />
-						<VStack>
-							<Heading as="h3" size={ 3 }>{ title }</Heading>
-							<Text>Description goes here.</Text>
-						</VStack>
-					</Grid>
-				</Link>
-			</CardBody>
-			<Elevation value={ 2 } isInteractive />
-		</Card>
-	);
 }
 
 function Page() {
@@ -74,7 +56,10 @@ function Page() {
 				</Spacer>
 				<Grid columns={ 3 } gap={ "20px" }>
 					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<Heading size={ 2 } as={ "h2" }>Design</Heading>
+						<HStack>
+							<Heading size={ 2 } as={ "h2" }>Design</Heading>
+							<Link to="/category">View all in Design</Link>
+						</HStack>
 					</Spacer>
 					<PluginCard title={ "Plugin 1" } />
 					<PluginCard title={ "Plugin 2" } />
@@ -83,13 +68,19 @@ function Page() {
 					<PluginCard title={ "Plugin 5" } />
 					<PluginCard title={ "Plugin 6" } />
 					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<Heading size={ 2 }>Marketing</Heading>
+						<HStack>
+							<Heading size={ 2 }>Marketing</Heading>
+							<Link to="/category">View all in Marketing</Link>
+						</HStack>
 					</Spacer>
 					<PluginCard title={ "Plugin 7" } />
 					<PluginCard title={ "Plugin 8" } />
 					<PluginCard title={ "Plugin 9" } />
 					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<Heading size={ 2 }>SEO</Heading>
+						<HStack>
+							<Heading size={ 2 }>SEO</Heading>
+							<Link to="/category">View all in SEO</Link>
+						</HStack>
 					</Spacer>               
 					<PluginCard title={ "Plugin 10" } />
 					<PluginCard title={ "Plugin 11" } />
