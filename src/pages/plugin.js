@@ -5,7 +5,7 @@ import { ui } from "@wp-g2/styles"
 import { FiArrowLeft } from '@wp-g2/icons'
 import { Layout } from "../core"
 
-function PluginCard( { title } ) {
+function InfoCard( { title } ) {
   return (
     <Card css="height: 200px;">
       <CardBody>
@@ -26,8 +26,8 @@ function PluginCard( { title } ) {
 function Page() {
   return (
     <Layout>
-      <View css={ "max-width: 900px; margin: auto;" }>
-        <Spacer p={ 5 }>
+      <View css={ "max-width: 900px; margin: 36px auto;" }>
+        <Spacer>
           <HStack spacing={ 5 } alignment="center">
             <Link to="/">
               <Icon icon={ <FiArrowLeft /> } />
@@ -54,9 +54,9 @@ function Page() {
         <Separator />
         <View css="max-width: 900px; margin: 0 auto;">
           <VStack spacing={ 5 }>
-            <PluginCard title="Description" />
-            <PluginCard title="Support" />
-            <PluginCard title="Reviews" />
+            <InfoCard title="Description" />
+            <InfoCard title="Support" />
+            <InfoCard title="Reviews" />
           </VStack>
         </View>
       </View>
