@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
+import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
@@ -11,7 +11,7 @@ function FeaturedPluginCard() {
 		<Card>
 			<CardBody>
 				<Placeholder width={ 30 } height={ 30 } css={ "border-radius: 50%" }>
-					<Icon icon={ <FiStar /> } />
+					<Icon icon={ <FiStar /> } size={ 16 } />
 				</Placeholder>
 				<HStack>
 					<Heading size={ 4 }>Featured plugin</Heading>
@@ -56,20 +56,24 @@ function Page() {
 					<Heading size={ 2 }>Featured</Heading>
 				</Spacer>
 				<Spacer my={ 8 }>
-					<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
-						<Card css={ "grid-row: 1 / span 2; text-align: center;" }>
-							<CardBody>
-								<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px;" } />
-								<Text size={ 14 } >Featured category</Text>
-								<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
-									<Link to="/category">
-										Search Engine Optimization
-									</Link>
-								</Heading>
-							</CardBody>
-						</Card>
-						<FeaturedPluginCard />
-						<FeaturedPluginCard />
+					<Grid columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
+						<Spacer m={ 0 }>
+							<Card css={ "grid-row: 1 / span 2; text-align: center;" }>
+								<CardBody>
+									<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px;" } />
+									<Text size={ 14 } >Featured category</Text>
+									<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
+										<Link to="/category">
+											Search Engine Optimization
+										</Link>
+									</Heading>
+								</CardBody>
+							</Card>
+						</Spacer>
+						<Grid rows={ 2 } columns={ 1 }>
+							<FeaturedPluginCard />
+							<FeaturedPluginCard />
+						</Grid>
 					</Grid>
 				</Spacer>
 				<Grid columns={ 3 } gap={ "20px" }>
