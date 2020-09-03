@@ -4,6 +4,7 @@ import { Separator, Tabs, Tab, TabList, TabPanel, Button, Alert, Alerts, Icon, H
 import { ui } from "@wp-g2/styles"
 import { FiArrowLeft } from '@wp-g2/icons'
 import { Layout } from "../core"
+import { PluginCard } from "../components"
 
 function InfoCard( { title } ) {
 	return (
@@ -102,6 +103,14 @@ function Page() {
 					<TabPanel><InfoCard title="Reviews" /></TabPanel>
 					<TabPanel><InfoCard title="Support" /></TabPanel>
 				</Tabs>
+				<Spacer mt={ 10 } mb={ 5 }>
+					<Heading size={ 4 }>More like this</Heading>
+				</Spacer>
+				<Grid columns={ 3 } gap={ "20px" }>
+					<PluginCard title={ "Plugin 1" } />
+					<PluginCard title={ "Plugin 2" } />
+					<PluginCard title={ "Plugin 3" } />
+				</Grid>
 			</View>
 		</Layout>
 	)
