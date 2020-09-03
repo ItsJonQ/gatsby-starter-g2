@@ -55,6 +55,43 @@ function Page() {
 						</CardBody>
 					</Card>
 				</Spacer>
+				<Spacer my={ 5 }>
+					<Card>
+						<CardBody css={ "padding: 0" }>
+							<HStack css={ "padding: 0 24px" }>
+								<VStack>
+									<Text>Rating</Text>
+									<Text size={ 24 } weight={ "600" }>4.8</Text>
+								</VStack>
+								<View css={ "background: #ddd; width: 1px; height: 80px" } />
+								<VStack>
+									<Text>Active installs</Text>
+									<Text size={ 24 } weight={ "600" }>2+ million</Text>
+								</VStack>
+								<View css={ "background: #ddd; width: 1px; height: 80px" } />
+								<VStack>
+									<Text>Version</Text>
+									<Text size={ 24 } weight={ "600" }>8.0.1</Text>
+								</VStack>
+								<View css={ "background: #ddd; width: 1px; height: 80px" } />
+								<VStack>
+									<Text>Last updated</Text>
+									<Text size={ 24 } weight={ "600" }>3 weeks ago</Text>
+								</VStack>
+								<View css={ "background: #ddd; width: 1px; height: 80px" } />
+								<VStack>
+									<Text>Requires version</Text>
+									<Text size={ 24 } weight={ "600" }>5.5+</Text>
+								</VStack>
+								<View css={ "background: #ddd; width: 1px; height: 80px" } />
+								<VStack>
+									<Text>Requires PHP</Text>
+									<Text size={ 24 } weight={ "600" }>5.2.0</Text>
+								</VStack>
+							</HStack>
+						</CardBody>
+					</Card>
+				</Spacer>
 				<Tabs>
 					<TabList css={ "width: 33%" }>
 						<Tab>Description</Tab>
