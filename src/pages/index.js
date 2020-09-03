@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, HStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
+import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
@@ -38,7 +38,19 @@ function Page() {
 					</Card>
 				</Spacer>
 				<Spacer my={ 8 }>
-					<SearchInput />
+					<HStack>
+						<Spacer>
+							<SearchInput />
+						</Spacer>
+						<Dropdown>
+							<DropdownTrigger>Filter by</DropdownTrigger>
+							<DropdownMenu>
+								<DropdownMenuItem>Design</DropdownMenuItem>
+								<DropdownMenuItem>Marketing</DropdownMenuItem>
+								<DropdownMenuItem>SEO</DropdownMenuItem>
+							</DropdownMenu>
+						</Dropdown>
+					</HStack>
 				</Spacer>
 				<Spacer my={ 8 }>
 					<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
