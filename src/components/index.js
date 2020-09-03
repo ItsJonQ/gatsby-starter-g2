@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Spacer, Separator, Icon, Heading, HStack, Text, Elevation, View, VStack, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
-import { FiStar } from '@wp-g2/icons'
+import { FiStar, FiArrowDown } from '@wp-g2/icons'
 
-export function PluginCard( { title } ) {
+export function PluginCard( { title = "Plugin" } ) {
 	return (
 		<Card m={ 3 }>
 			<CardBody css={ "padding: 0" }>
@@ -15,7 +15,10 @@ export function PluginCard( { title } ) {
 						</VStack>
 						<Separator my={ 0 } css={ "grid-column: 1 / span 2" } />
 						<HStack css={ "grid-column: 1 / span 2; padding: 0 12px 12px" } spacing={ 2 }>
-							<Text css={ "margin-right: 8px" }>800k</Text>
+							<HStack justify={ "start" } spacing={ 1 }>
+								<Icon icon={ <FiArrowDown /> } size={ 12 } />
+								<Text css={ "margin-right: 8px" }>800k</Text>
+							</HStack>
 							<Spacer>
 								<HStack justify={ "start" } spacing={ 1 }>
 									<Icon icon={ <FiStar/> } size={ 12 } />

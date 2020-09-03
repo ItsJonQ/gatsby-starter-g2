@@ -9,7 +9,7 @@ import { PluginCard } from "../components"
 function InfoCard( { title } ) {
 	return (
 		<Card>
-			<CardBody css={ "height: 100%; padding: 16px" }>
+			<CardBody css={ "height: 100%; padding: 20px" }>
 				<VStack spacing={ 5 }>
 					<Heading size={ 3 }>{ title }</Heading>
 					<Placeholder height={ 200 } />

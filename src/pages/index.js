@@ -6,22 +6,6 @@ import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
 import { PluginCard } from '../components'
 
-function FeaturedPluginCard() {
-	return (
-		<Card>
-			<CardBody>
-				<Placeholder width={ 30 } height={ 30 } css={ "border-radius: 50%" }>
-					<Icon icon={ <FiStar /> } size={ 16 } />
-				</Placeholder>
-				<HStack>
-					<Heading size={ 4 }>Featured plugin</Heading>
-					<Button as={ Link } to="/plugin">Install</Button>
-				</HStack>
-			</CardBody>
-		</Card>
-	)
-}
-
 function Page() {
 	return (
 		<Layout title="Plugins">
@@ -56,24 +40,22 @@ function Page() {
 					<Heading size={ 2 }>Featured</Heading>
 				</Spacer>
 				<Spacer my={ 8 }>
-					<Grid columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
-						<Spacer m={ 0 }>
-							<Card css={ "grid-row: 1 / span 2; text-align: center;" }>
-								<CardBody>
+					<Grid rows={ 2 } columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
+						<Card css={ "grid-row: 1 / span 2" }>
+							<CardBody>
+								<VStack>
 									<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px;" } />
-									<Text size={ 14 } >Featured category</Text>
-									<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
+									<Text isBlock align="center" size={ 14 }>Featured category</Text>
+									<Heading size={ 3 } css={ "margin: 8px 0 16px" } align={ "center" } isBlock>
 										<Link to="/category">
 											Search Engine Optimization
 										</Link>
 									</Heading>
-								</CardBody>
-							</Card>
-						</Spacer>
-						<Grid rows={ 2 } columns={ 1 }>
-							<FeaturedPluginCard />
-							<FeaturedPluginCard />
-						</Grid>
+								</VStack>
+							</CardBody>
+						</Card>
+						<PluginCard title={ "Featured Plugin 1" } />
+						<PluginCard title={ "Featured Plugin 2" } />
 					</Grid>
 				</Spacer>
 				<Grid columns={ 3 } gap={ "20px" }>
