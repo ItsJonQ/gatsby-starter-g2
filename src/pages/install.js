@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, SearchInput, HStack, Icon, Spacer, View, Placeholder, Grid, Button } from "@wp-g2/components"
+import { Heading, Text, HStack, Icon, Spacer, View, Placeholder, Button } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiArrowLeft } from '@wp-g2/icons'

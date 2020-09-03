@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Spacer, Separator, Icon, Heading, HStack, Text, Elevation, View, VStack, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
+import { Spacer, Separator, Icon, Heading, HStack, Text, Elevation, VStack, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
 import { FiStar, FiArrowDown } from '@wp-g2/icons'
 
 export function PluginCard( { title = "Plugin" } ) {
@@ -32,4 +32,41 @@ export function PluginCard( { title = "Plugin" } ) {
 			<Elevation value={ 2 } isInteractive />
 		</Card>
 	);
+}
+
+export function PluginGrid() {
+	return (
+		<Grid columns={ 3 } gap={ "20px" }>
+			<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
+				<HStack>
+					<Heading size={ 2 } as={ "h3" }>Design</Heading>
+					<Link to="/category">View all in Design</Link>
+				</HStack>
+			</Spacer>
+			<PluginCard title={ "Plugin 1" } />
+			<PluginCard title={ "Plugin 2" } />
+			<PluginCard title={ "Plugin 3" } />
+			<PluginCard title={ "Plugin 4" } />
+			<PluginCard title={ "Plugin 5" } />
+			<PluginCard title={ "Plugin 6" } />
+			<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
+				<HStack>
+					<Heading size={ 2 } as={ "h3" }>Marketing</Heading>
+					<Link to="/category">View all in Marketing</Link>
+				</HStack>
+			</Spacer>
+			<PluginCard title={ "Plugin 7" } />
+			<PluginCard title={ "Plugin 8" } />
+			<PluginCard title={ "Plugin 9" } />
+			<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
+				<HStack>
+					<Heading size={ 2 } as={ "h3" }>SEO</Heading>
+					<Link to="/category">View all in SEO</Link>
+				</HStack>
+			</Spacer>               
+			<PluginCard title={ "Plugin 10" } />
+			<PluginCard title={ "Plugin 11" } />
+			<PluginCard title={ "Plugin 12" } />
+		</Grid>
+	)
 }

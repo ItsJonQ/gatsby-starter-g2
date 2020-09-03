@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Separator, Tabs, Tab, TabList, TabPanel, Button, Alert, Alerts, Icon, Heading, Grid, Text, HStack, VStack, Card, CardBody, Placeholder, View, Spacer } from '@wp-g2/components'
+import { Tabs, Tab, TabList, TabPanel, Button, Alert, Alerts, Icon, Heading, Grid, Text, HStack, VStack, Card, CardBody, Placeholder, View, Spacer } from '@wp-g2/components'
 import { ui } from "@wp-g2/styles"
 import { FiArrowLeft } from '@wp-g2/icons'
 import { Layout } from "../core"

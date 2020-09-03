@@ -1,9 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Heading, SearchInput, Text, HStack, Elevation, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
+import { View, Spacer, Heading, Text, SearchInput, Grid } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
-import { FiStar } from '@wp-g2/icons'
 import { PluginCard } from '../components'
 
 function Page() {

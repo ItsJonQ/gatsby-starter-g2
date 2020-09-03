@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
+import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Spacer, View, Card, Placeholder, Grid, CardBody, SearchInput } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
-import { FiStar } from '@wp-g2/icons'
-import { PluginCard } from '../components'
+import { PluginCard, PluginGrid } from '../components'
 
 function Page() {
 	return (
@@ -58,38 +57,7 @@ function Page() {
 						<PluginCard title={ "Featured Plugin 2" } />
 					</Grid>
 				</Spacer>
-				<Grid columns={ 3 } gap={ "20px" }>
-					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<HStack>
-							<Heading size={ 2 } as={ "h2" }>Design</Heading>
-							<Link to="/category">View all in Design</Link>
-						</HStack>
-					</Spacer>
-					<PluginCard title={ "Plugin 1" } />
-					<PluginCard title={ "Plugin 2" } />
-					<PluginCard title={ "Plugin 3" } />
-					<PluginCard title={ "Plugin 4" } />
-					<PluginCard title={ "Plugin 5" } />
-					<PluginCard title={ "Plugin 6" } />
-					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<HStack>
-							<Heading size={ 2 }>Marketing</Heading>
-							<Link to="/category">View all in Marketing</Link>
-						</HStack>
-					</Spacer>
-					<PluginCard title={ "Plugin 7" } />
-					<PluginCard title={ "Plugin 8" } />
-					<PluginCard title={ "Plugin 9" } />
-					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
-						<HStack>
-							<Heading size={ 2 }>SEO</Heading>
-							<Link to="/category">View all in SEO</Link>
-						</HStack>
-					</Spacer>               
-					<PluginCard title={ "Plugin 10" } />
-					<PluginCard title={ "Plugin 11" } />
-					<PluginCard title={ "Plugin 12" } />
-				</Grid>
+				<PluginGrid />
 			</View>
 		</Layout>
 	)
