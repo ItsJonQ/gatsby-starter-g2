@@ -52,6 +52,9 @@ function Page() {
 						</Dropdown>
 					</HStack>
 				</Spacer>
+				<Spacer>
+					<Heading size={ 2 }>Featured</Heading>
+				</Spacer>
 				<Spacer my={ 8 }>
 					<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
 						<Card css={ "grid-row: 1 / span 2; text-align: center;" }>

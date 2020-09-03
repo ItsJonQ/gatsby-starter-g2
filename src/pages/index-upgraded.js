@@ -34,6 +34,14 @@ function Page() {
 					<SearchInput />
 				</Spacer>
 				<Spacer my={ 8 }>
+					<HStack>
+						<Spacer>
+							<Heading size={ 2 }>Featured</Heading>
+						</Spacer>
+						<Button as={ Link } to="/install">Add new</Button>
+					</HStack>
+				</Spacer>
+				<Spacer my={ 8 }>
 					<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
 						<Card css={ "grid-row: 1 / span 2; text-align: center;" }>
 							<CardBody>
