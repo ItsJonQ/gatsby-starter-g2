@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, HStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button, SearchInput } from "@wp-g2/components"
+import { Heading, Text, SearchInput, HStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
@@ -29,13 +29,6 @@ function Page() {
 				<Spacer my={ 8 }>
 					<Heading size={ 1 }>Browse Plugins</Heading>
 					<Text>Plugins are extensions that add useful features to your site.</Text>
-				</Spacer>
-				<Spacer my={ 8 }>
-					<Card>
-						<CardBody>
-							<Link to="/checkout">Upgrade to install plugins</Link>
-						</CardBody>
-					</Card>
 				</Spacer>
 				<Spacer my={ 8 }>
 					<SearchInput />

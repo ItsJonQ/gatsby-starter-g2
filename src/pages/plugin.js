@@ -7,8 +7,8 @@ import { Layout } from "../core"
 
 function InfoCard( { title } ) {
   return (
-    <Card css="height: 200px;">
-      <CardBody>
+    <Card>
+      <CardBody css={ "height: 100%" }>
         <Grid columns={ 2 }>
           <VStack>
             <Heading size={2}>{ title }</Heading>
@@ -16,7 +16,7 @@ function InfoCard( { title } ) {
             <Spacer />
             <View>Expand section</View>
           </VStack>
-          <Placeholder width={ 500 } />
+          <Placeholder width={ 500 } height={ 200 }/>
         </Grid>
       </CardBody>
     </Card>

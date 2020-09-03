@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, HStack, Elevation, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
+import { Heading, SearchInput, Text, HStack, Elevation, VStack, Icon, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { FiStar } from '@wp-g2/icons'
@@ -15,11 +15,7 @@ function Page() {
 					<Text>Plugins are extensions that add useful features to your site.</Text>
 				</Spacer>
 				<Spacer my={ 8 }>
-					<Card>
-						<CardBody>
-							<Text>Search...</Text>
-						</CardBody>
-					</Card>
+					<SearchInput />
 				</Spacer>
 				<Grid columns={ 3 } gap={ "20px" }>
 					<Spacer my={ 4 } css={ "grid-column: 1 / span 3" }>
