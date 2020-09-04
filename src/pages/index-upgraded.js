@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Text, SearchInput, HStack, Spacer, View, Card, Placeholder, Grid, CardBody, Button } from "@wp-g2/components"
+import { Button, Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Spacer, View, Card, Placeholder, Grid, CardBody, SearchInput } from "@wp-g2/components"
 import { ui } from "@wp-g2/styles"
 import { Layout } from "../core"
 import { PluginCard, PluginGrid } from '../components'
@@ -14,7 +14,19 @@ function Page() {
 					<Text>Plugins are extensions that add useful features to your site.</Text>
 				</Spacer>
 				<Spacer my={ 8 }>
-					<SearchInput />
+					<HStack>
+						<Spacer>
+							<SearchInput />
+						</Spacer>
+						<Dropdown>
+							<DropdownTrigger>Filter by</DropdownTrigger>
+							<DropdownMenu>
+								<DropdownMenuItem>Design</DropdownMenuItem>
+								<DropdownMenuItem>Marketing</DropdownMenuItem>
+								<DropdownMenuItem>SEO</DropdownMenuItem>
+							</DropdownMenu>
+						</Dropdown>
+					</HStack>
 				</Spacer>
 				<Spacer my={ 8 }>
 					<HStack>
