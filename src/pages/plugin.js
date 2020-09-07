@@ -24,7 +24,7 @@ function InfoCard( { title } ) {
 function Page() {
 	return (
 		<Layout>
-			<View css={ "max-width: 900px; margin: 36px auto;" }>
+			<View css={ "max-width: 900px; margin: 36px auto !important;" }>
 				<Spacer my={ 5 }>
 					<HStack spacing={ 5 } alignment="center">
 						<Link to="/">

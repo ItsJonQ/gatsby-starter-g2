@@ -1,25 +1,37 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Spacer, View, Card, Placeholder, Grid, CardBody, SearchInput } from "@wp-g2/components"
-import { ui } from "@wp-g2/styles"
+import { Button, Heading, Dropdown, DropdownMenu, DropdownTrigger, DropdownMenuItem, Text, HStack, VStack, Spacer, View, Card, Placeholder, Grid, CardBody, SearchInput } from "@wp-g2/components"
 import { Layout } from "../core"
 import { PluginCard, PluginGrid } from '../components'
+import { useBoolState } from 'use-enhanced-state';
 
 function Page() {
+	
+	const [upgraded, setUpgraded] = useBoolState(false);
+
+	const showUpgraded = (state) => {
+		state ? setUpgraded.true() : setUpgraded.false();
+	};
+	const uploadAction = (state) => {
+		//state ? setUpgraded.true() : setUpgraded.false();
+	};
+
 	return (
 		<Layout title="Plugins">
-			<View css={ "max-width: 900px; margin: 36px auto;" }>
+			<View m={5} css={ "max-width: 900px; margin: 36px auto !important;" }>
 				<Spacer my={ 8 }>
-					<Heading size={ 1 }>Browse Plugins</Heading>
+					<HStack  spacing={8} alignment="edge">
+						<Heading size={ 1 }>Browse Plugins</Heading>
+						{ !upgraded && 
+							<Button onClick={() => showUpgraded(true)}>Upgrade to add plugins</Button>
+						}
+						{ upgraded && 
+							<Button onClick={() => uploadAction(true)}>Upload plugins</Button>
+						}
+					</HStack>	
 					<Text>Plugins are extensions that add useful features to your site.</Text>
 				</Spacer>
-				<Spacer my={ 8 }>
-					<Card>
-						<CardBody>
-							<Link to="/checkout">Upgrade to install plugins</Link>
-						</CardBody>
-					</Card>
-				</Spacer>
+					
 				<Spacer my={ 8 }>
 					<HStack>
 						<Spacer>
@@ -35,28 +47,64 @@ function Page() {
 						</Dropdown>
 					</HStack>
 				</Spacer>
-				<Spacer>
-					<Heading size={ 2 }>Featured</Heading>
-				</Spacer>
-				<Spacer my={ 8 }>
-					<Grid rows={ 2 } columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
-						<Card css={ "grid-row: 1 / span 2" }>
-							<CardBody>
-								<VStack>
-									<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px;" } />
-									<Text isBlock align="center" size={ 14 }>Featured category</Text>
-									<Heading size={ 3 } css={ "margin: 8px 0 16px" } align={ "center" } isBlock>
-										<Link to="/category">
-											Search Engine Optimization
-										</Link>
-									</Heading>
-								</VStack>
-							</CardBody>
-						</Card>
-						<PluginCard title={ "Featured Plugin 1" } />
-						<PluginCard title={ "Featured Plugin 2" } />
-					</Grid>
-				</Spacer>
+				{ !upgraded ? (
+					<>
+						<Spacer my={ 8 }>
+							<HStack>
+								<Spacer>
+									<Heading size={ 2 }>Featured</Heading>
+								</Spacer>
+								
+							</HStack>
+						</Spacer>
+						<Spacer my={ 8 }>
+							<Grid rows={ 2 } columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
+								<Card css={ "grid-row: 1 / span 2; border-radius: 2px !important;" }>
+									<CardBody css={ "border-radius: 2px !important;" }>
+										<VStack>
+											<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 2px; margin: 0 auto 20px !important;" } />
+											<Text isBlock align="center" size={ 14 }>Featured category</Text>
+											<Heading size={ 3 } css={ "margin: 8px 0 16px" } align={ "center" } isBlock>
+												<Link to="/category">
+													Search Engine Optimization
+												</Link>
+											</Heading>
+										</VStack>
+									</CardBody>
+								</Card>
+								<PluginCard title={ "Featured Plugin 1" } />
+								<PluginCard title={ "Featured Plugin 2" } />
+							</Grid>
+						</Spacer>
+					</>
+				) : (
+					<>
+						<Spacer my={ 8 }>
+							<HStack>
+								<Spacer>
+									<Heading size={ 2 }>Featured</Heading>
+								</Spacer>
+							</HStack>
+						</Spacer>
+						<Spacer my={ 8 }>
+							<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
+								<Card css={ "grid-row: 1 / span 2; text-align: center; border-radius: 2px !important" }>
+									<CardBody css={ "border-radius: 2px !important;" }>
+										<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px !important;" } />
+										<Text size={ 14 } >Featured category</Text>
+										<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
+											<Link to="/category">
+												Search Engine Optimization
+											</Link>
+										</Heading>
+									</CardBody>
+								</Card>
+								<PluginCard title={ "Featured Plugin 1" } />
+								<PluginCard title={ "Featured Plugin 2" } />
+							</Grid>
+						</Spacer>
+					</>
+				)}
 				<PluginGrid />
 			</View>
 		</Layout>
