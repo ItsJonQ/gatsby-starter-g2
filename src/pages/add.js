@@ -9,11 +9,8 @@ function Page() {
 	return (
 		<Layout title="Plugins">
 			<View css={ "max-width: 900px; margin: 36px auto;" }>
-				<Link to="/">
-					<Icon icon={ <FiArrowLeft /> } />
-				</Link>
 				<Spacer my={ 8 }>
-					<Heading size={ 1 }>Add New</Heading>
+					<Heading size={ 1 }>Add new plugin</Heading>
 				</Spacer>
 				<Placeholder height={ "200px" }>
 					<HStack alignment={ "center" }>

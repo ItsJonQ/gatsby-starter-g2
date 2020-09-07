@@ -12,9 +12,6 @@ function Page() {
 	const showUpgraded = ( state ) => {
 		state ? setUpgraded.true() : setUpgraded.false();
 	};
-	const uploadAction = ( state ) => {
-		//state ? setUpgraded.true() : setUpgraded.false();
-	};
 
 	return (
 		<Layout title="Plugins">
@@ -26,7 +23,7 @@ function Page() {
 							<Button onClick={ () => showUpgraded( true ) }>Upgrade to add plugins</Button>
 						}
 						{ upgraded &&
-							<Button onClick={ () => uploadAction( true ) }>Upload plugins</Button>
+							<Button as={ Link } to={ "/add" } >Upload plugins</Button>
 						}
 					</HStack>	
 					<Text>Plugins are extensions that add useful features to your site.</Text>
