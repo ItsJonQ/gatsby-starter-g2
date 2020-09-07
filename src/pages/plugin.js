@@ -2,19 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 import { Tabs, Tab, TabList, TabPanel, Button, Alert, Alerts, Icon, Heading, Grid, Text, HStack, VStack, Card, CardBody, Placeholder, View, Spacer } from '@wp-g2/components'
 import { ui } from "@wp-g2/styles"
-import { FiArrowLeft } from '@wp-g2/icons'
+import { FiArrowLeft, FiStar } from '@wp-g2/icons'
 import { Layout } from "../core"
 import { PluginCard } from "../components"
 import { useBoolState } from 'use-enhanced-state'
 
-function InfoCard( { title } ) {
+function InfoCard( { title, content } ) {
 	return (
 		<Card>
 			<CardBody css={ "height: 100%; padding: 20px" }>
 				<VStack spacing={ 5 }>
 					<Heading size={ 3 }>{ title }</Heading>
 					<Placeholder height={ 200 } />
-					<Text>Description goes here.</Text>
+					<View>{ content }</View>
 					<Spacer />
 				</VStack>
 			</CardBody>
@@ -117,9 +117,9 @@ function Page() {
 						<Tab>Reviews</Tab>
 						<Tab>Support</Tab>
 					</TabList>
-					<TabPanel><InfoCard title="Description" /></TabPanel>
-					<TabPanel><InfoCard title="Reviews" /></TabPanel>
-					<TabPanel><InfoCard title="Support" /></TabPanel>
+					<TabPanel><InfoCard title="Description" content={ <Text>Description of the plugin.</Text> }/></TabPanel>
+					<TabPanel><InfoCard title="Reviews" content={ <HStack justify={ "start" } gap={ 1 }><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Text>4.8/5</Text></HStack> } /></TabPanel>
+					<TabPanel><InfoCard title="Support" content={ <View><HStack justify={ "start" }><Heading size={ 4 }>Forums:</Heading><Text>Contact</Text></HStack><HStack justify={ "start" }><Heading size={ 4 }>Website:</Heading><Link to={ "http://wordpress.org" }>WordPress.org</Link></HStack></View> } /></TabPanel>
 				</Tabs>
 				<Spacer mt={ 10 } mb={ 5 }>
 					<Heading size={ 4 }>More like this</Heading>
