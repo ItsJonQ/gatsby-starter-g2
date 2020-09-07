@@ -23,7 +23,7 @@ function Page() {
 							<Button onClick={ () => showUpgraded( true ) }>Upgrade to add plugins</Button>
 						}
 						{ upgraded &&
-							<Button as={ Link } to={ "/add" } >Upload plugins</Button>
+							<Button as={ Link } to={ "/upload" } >Upload plugin</Button>
 						}
 					</HStack>	
 					<Text>Plugins are extensions that add useful features to your site.</Text>

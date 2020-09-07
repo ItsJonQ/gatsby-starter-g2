@@ -10,7 +10,7 @@ function Page() {
 		<Layout title="Plugins">
 			<View css={ "max-width: 900px; margin: 36px auto;" }>
 				<Spacer my={ 8 }>
-					<Heading size={ 1 }>Add new plugin</Heading>
+					<Heading size={ 1 }>Upload plugin</Heading>
 				</Spacer>
 				<Placeholder height={ "200px" }>
 					<HStack alignment={ "center" }>
