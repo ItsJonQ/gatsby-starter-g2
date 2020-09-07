@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Tabs, Tab, TabList, TabPanel, Button, Alert, Alerts, Icon, Heading, Grid, Text, HStack, VStack, Card, CardBody, Placeholder, View, Spacer } from '@wp-g2/components'
 import { ui } from "@wp-g2/styles"
-import { FiArrowLeft, FiStar } from '@wp-g2/icons'
+import { FiStar } from '@wp-g2/icons'
 import { Layout } from "../core"
 import { PluginCard } from "../components"
 import { useBoolState } from 'use-enhanced-state'
@@ -111,11 +111,11 @@ function Page() {
 						</CardBody>
 					</Card>
 				</Spacer>
-				<Tabs>
+				<Tabs selectedId={ activated ? "support" : "description" }>
 					<TabList css={ "width: 33%" }>
-						<Tab>Description</Tab>
+						<Tab id="description">Description</Tab>
 						<Tab>Reviews</Tab>
-						<Tab>Support</Tab>
+						<Tab id="support">Support</Tab>
 					</TabList>
 					<TabPanel><InfoCard title="Description" content={ <Text>Description of the plugin.</Text> }/></TabPanel>
 					<TabPanel><InfoCard title="Reviews" content={ <HStack justify={ "start" } gap={ 1 }><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Icon icon={ <FiStar /> } /><Text>4.8/5</Text></HStack> } /></TabPanel>
