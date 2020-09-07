@@ -14,8 +14,8 @@ export function PluginCard( { title = "Plugin" } ) {
 							<Heading as="h3" size={ 3 }>{ title }</Heading>
 							<Text>by Author Name</Text>
 						</VStack>
-						<Separator my={ 0 } css={ "grid-column: 1 / span 2" } />
-						<HStack css={ "grid-column: 1 / span 2;" } spacing={ 2 }>
+						<Separator m={ 1.5 } css={ "grid-column: 1 / span 2" } />
+						<HStack css={ "grid-column: 1 / span 2; padding: 0 12px 6px;" } spacing={ 2 }>
 							<HStack justify={ "start" } spacing={ 1 }>
 								<Icon icon={ <FiArrowDown /> } size={ 12 } />
 								<Text css={ "margin-right: 8px" }>800k</Text>

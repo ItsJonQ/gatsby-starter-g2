@@ -5,6 +5,7 @@ import { ui } from "@wp-g2/styles"
 import { FiArrowLeft } from '@wp-g2/icons'
 import { Layout } from "../core"
 import { PluginCard } from "../components"
+import { useBoolState } from 'use-enhanced-state'
 
 function InfoCard( { title } ) {
 	return (
@@ -22,21 +23,31 @@ function InfoCard( { title } ) {
 }
 
 function Page() {
+
+	const [ upgraded, setUpgraded ] = useBoolState( false );
+	const [ activated, setActivated ] = useBoolState( false );
+
+	const showUpgraded = ( state ) => {
+		state ? setUpgraded.true() : setUpgraded.false();
+	};
+	const showActivated = ( state ) => {
+		state ? setActivated.true() : setActivated.false();
+	};
+
 	return (
 		<Layout>
 			<View css={ "max-width: 900px; margin: 36px auto !important;" }>
 				<Spacer my={ 5 }>
 					<HStack spacing={ 5 } alignment="center">
-						<Link to="/">
-							<Icon icon={ <FiArrowLeft /> } />
-						</Link>
-						<Spacer>
-							<Alerts>
-								<Alert status="success">
-									<Text>Your plugin has been activated</Text>
-								</Alert>
-							</Alerts>
-						</Spacer>
+						{ upgraded && activated &&
+							<Spacer>
+								<Alerts>
+									<Alert status="success">
+										<Text>Your plugin has been added</Text>
+									</Alert>
+								</Alerts>
+							</Spacer>
+						}
 					</HStack>
 				</Spacer>
 				<Spacer my={ 5 }>
@@ -51,7 +62,14 @@ function Page() {
 										<Text>by <Link to="/">Plugin author</Link></Text>
 									</VStack>
 								</Spacer>
-								<Button variant= { "primary" }>Install</Button>
+								{ ! upgraded &&
+									<Button onClick={ () => showUpgraded( true ) }>Upgrade to add plugin</Button>
+								}
+								{ upgraded &&
+									<Button onClick={ () => showActivated( true ) }>
+										{ ! activated ? "Add plugin" : "Active" }
+									</Button>
+								}
 							</HStack>
 						</CardBody>
 					</Card>

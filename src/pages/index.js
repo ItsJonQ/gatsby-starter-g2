@@ -7,12 +7,12 @@ import { useBoolState } from 'use-enhanced-state';
 
 function Page() {
 	
-	const [upgraded, setUpgraded] = useBoolState(false);
+	const [ upgraded, setUpgraded ] = useBoolState( false );
 
-	const showUpgraded = (state) => {
+	const showUpgraded = ( state ) => {
 		state ? setUpgraded.true() : setUpgraded.false();
 	};
-	const uploadAction = (state) => {
+	const uploadAction = ( state ) => {
 		//state ? setUpgraded.true() : setUpgraded.false();
 	};
 
@@ -22,11 +22,11 @@ function Page() {
 				<Spacer my={ 8 }>
 					<HStack  spacing={8} alignment="edge">
 						<Heading size={ 1 }>Browse Plugins</Heading>
-						{ !upgraded && 
-							<Button onClick={() => showUpgraded(true)}>Upgrade to add plugins</Button>
+						{ ! upgraded &&
+							<Button onClick={ () => showUpgraded( true ) }>Upgrade to add plugins</Button>
 						}
-						{ upgraded && 
-							<Button onClick={() => uploadAction(true)}>Upload plugins</Button>
+						{ upgraded &&
+							<Button onClick={ () => uploadAction( true ) }>Upload plugins</Button>
 						}
 					</HStack>	
 					<Text>Plugins are extensions that add useful features to your site.</Text>
@@ -47,24 +47,23 @@ function Page() {
 						</Dropdown>
 					</HStack>
 				</Spacer>
-				{ !upgraded ? (
-					<>
+				{ ! upgraded ? (
+					<View>
 						<Spacer my={ 8 }>
 							<HStack>
 								<Spacer>
 									<Heading size={ 2 }>Featured</Heading>
 								</Spacer>
-								
 							</HStack>
 						</Spacer>
 						<Spacer my={ 8 }>
 							<Grid rows={ 2 } columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
-								<Card css={ "grid-row: 1 / span 2; border-radius: 2px !important;" }>
+								<Card css={ "grid-row: 1 / span 2; text-align: center; border-radius: 2px !important;" }>
 									<CardBody css={ "border-radius: 2px !important;" }>
 										<VStack>
 											<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 2px; margin: 0 auto 20px !important;" } />
-											<Text isBlock align="center" size={ 14 }>Featured category</Text>
-											<Heading size={ 3 } css={ "margin: 8px 0 16px" } align={ "center" } isBlock>
+											<Text size={ 14 }>Featured category</Text>
+											<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
 												<Link to="/category">
 													Search Engine Optimization
 												</Link>
@@ -76,9 +75,9 @@ function Page() {
 								<PluginCard title={ "Featured Plugin 2" } />
 							</Grid>
 						</Spacer>
-					</>
+					</View>
 				) : (
-					<>
+					<View>
 						<Spacer my={ 8 }>
 							<HStack>
 								<Spacer>
@@ -87,23 +86,25 @@ function Page() {
 							</HStack>
 						</Spacer>
 						<Spacer my={ 8 }>
-							<Grid columns={ 2 } rows={ 2 } templateColumns={ "66% auto" } gap={ 20 }>
-								<Card css={ "grid-row: 1 / span 2; text-align: center; border-radius: 2px !important" }>
+							<Grid rows={ 2 } columns={ 2 } templateColumns={ "66% auto" } gap={ "16px" }>
+								<Card css={ "grid-row: 1 / span 2; text-align: center; border-radius: 2px !important;" }>
 									<CardBody css={ "border-radius: 2px !important;" }>
-										<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 50%; margin: 0 auto 20px !important;" } />
-										<Text size={ 14 } >Featured category</Text>
-										<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
-											<Link to="/category">
-												Search Engine Optimization
-											</Link>
-										</Heading>
+										<VStack>
+											<Placeholder width={ 150 } height={ 150 } css={ "border-radius: 2px; margin: 0 auto 20px !important;" } />
+											<Text size={ 14 }>Featured category</Text>
+											<Heading size={ 3 } css={ "margin: 8px 0 16px" }>
+												<Link to="/category">
+													Search Engine Optimization
+												</Link>
+											</Heading>
+										</VStack>
 									</CardBody>
 								</Card>
 								<PluginCard title={ "Featured Plugin 1" } />
 								<PluginCard title={ "Featured Plugin 2" } />
 							</Grid>
 						</Spacer>
-					</>
+					</View>
 				)}
 				<PluginGrid />
 			</View>

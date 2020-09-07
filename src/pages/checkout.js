@@ -7,7 +7,7 @@ function Page() {
 	return (
 		<Layout title={ "Checkout" }>
 			<View>
-				<Text>This is a checkout screen. <Link to="/index-upgraded">Back to plugins.</Link></Text>
+				<Text>This is a checkout screen. <Link to="/index">Back to plugins.</Link></Text>
 			</View>
 		</Layout>
 	)
